@@ -12,7 +12,7 @@ def readFile(input):
             passwords.append([m.group(1),m.group(2),m.group(3),m.group(4)])
     return passwords
 
-answer = readFile('inputsmall.txt')
+answer = readFile('input.txt')
 
 valids = 0
 
@@ -26,20 +26,20 @@ for line in answer:
         # if both positions are in index range
         if (pos1 in range(len(pw))) and (pos2 in range(len(pw))):
             if ((pw[pos1] == c and pw[pos2] != c) or (pw[pos1] != c and pw[pos2] == c)):
-                print(pw)
-                print(pw[pos1])
-                print(pw[pos2])
-                #valids += 1               
+                #print(pw)
+                #print(pw[pos1])
+                #rint(pw[pos2])
+                valids += 1               
         elif ((pos1 in range(len(pw))) and (pos2 not in range(len(pw)))):
             if pw[pos1] == c:
-                print(pw)
-                print(pw[pos1])
-                #valids += 1                
+                #print(pw)
+                #print(pw[pos1])
+                valids += 1                
         elif ((pos2 in range(len(pw))) and (pos1 not in range(len(pw)))):
             if pw[pos2] == c:
-                print(pw)
-                print(pw[pos2])
-                #valids += 1
+                #print(pw)
+                #print(pw[pos2])
+                valids += 1
         else:
             pass
 
